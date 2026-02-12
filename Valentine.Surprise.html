@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff5f8f, #ff9a9e);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.names {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.heart {
+    font-size: 90px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.card {
+    background: rgba(255,255,255,0.25);
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 25px auto;
+}
+
+button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4d6d;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background: #ffe0e6;
+}
+
+.gallery img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 8px;
+    border: 2px solid white;
+}
+
+.hidden {
+    display: none;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<h1>Happy Valentine’s Day</h1>
+
+<div class="names">
+    NikhiL My Love ❤️
+</div>
+
+<div class="card">
+    Distance can never stop two hearts that truly belong together.  
+    Every second apart only makes me love you more. 💕
+</div>
+
+<!-- MUSIC -->
+<button onclick="document.getElementById('song').play()">Play Our Song 🎶</button>
+<audio id="song">
+    <source src="C:\Users\Urvashi Gupta\Downloads\Jeene Laga Hoon From Ramaiya Vastavaiya-128kbps.mp3">
+</audio>
+
+<!-- COUNTDOWN -->
+<div class="card">
+    <h3>⏳ Countdown till we meet</h3>
+    <p id="countdown"></p>
+    </div>
+
+<!-- PHOTOS -->
+<div class="card">
+    <h3>📸 Our Memories</h3>
+    <div class="gallery">
+        <img src="E:\WhatsApp Image 2026-02-10 at 9.22.29 PM.jpeg">
+        <img src="E:\WhatsApp Image 2026-02-10 at 9.26.45 PM.jpeg">
+        <img src="E:\WhatsApp Image 2026-02-10 at 9.22.28 PM.jpeg">
+    </div>
+
+<!-- SECRET NOTE -->
+<button onclick="document.getElementById('note').style.display='block'">
+    Open My Heart 💌
+</button>
+
+<div id="note" class="hidden card">
+    No matter how far you are,  
+    you are my safest place,  
+    my favorite person,  
+    my forever Valentine. ❤️  
+</div>
+
+<footer>
+    Made with endless love 💞
+</footer>
+
+</div>
+
+<script>
+const meetDate = new Date("2026-06-05"); // CHANGE THIS DATE
+const countdownEl = document.getElementById("countdown");
+
+setInterval(() => {
+    const now = new Date();
+    const diff = meetDate - now;
+
+    if (diff <= 0) {
+        countdownEl.innerHTML = "We are together now ❤️";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    countdownEl.innerHTML = days + " days left 💖";
+}, 1000);
+</script>
+
+</body>
+</html>
